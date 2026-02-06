@@ -19,34 +19,42 @@ export const MortageForm = () => {
             </header>
             <form onSubmit={handleSubmit} i className=''>
                 <div className=''>
-                    <label htmlFor="amountId">mortage amount</label>
+                    <label htmlFor="amount-id">mortage amount</label>
                     <div className=''>
-                        <input type="number" aria-label='mortage amount' name='amountId' onChange={handleChange} />
+                        <input type="number" aria-label='mortage amount' id='amount-id' name='amount-id' onChange={handleChange} />
                         <span className=''>&pound;</span>
                     </div>
-                    <span className=''>this field is required</span>
+                    <span className='error-amount'></span>
                 </div>
                 <div className=''>
                     <div className=''>
-                        <label htmlFor="termId">mortage term</label>
+                        <label htmlFor="term-id">mortage term</label>
                         <div className=''>
-                            <input type="number" aria-label='mortage term' name='termId' onChange={handleChange} />
+                            <input type="number" aria-label='mortage term' id='term-id' name='term-id' onChange={handleChange} />
                             <span className=''>years</span>
                         </div>
-                        <span className=''>this field is required</span>
+                        <span className='error-term'></span>
                     </div>
                     <div className=''>
-                        <label htmlFor="rateId">interest rate</label>
+                        <label htmlFor="rate-id">interest rate</label>
                         <div className=''>
-                            <input type="number" aria-label='interest rate' name='rateId' onChange={handleChange} />
+                            <input type="number" aria-label='interest rate' id='rate-id' name='rate-id' onChange={handleChange} />
                             <span className=''>%</span>
                         </div>
-                        <span className=''>this field is required</span>
+                        <span className='error-rate'></span>
                     </div>
                 </div>
                 <div className=''>
                     <h2 className=''>mortage type</h2>
-
+                    <div className=''>
+                        <input type="radio" name="repayment" id="repayment" />
+                        <label htmlFor="repayment" className=''>repayment</label>
+                    </div>
+                    <div className=''>
+                        <input type="radio" name="type" id="only" />
+                        <label htmlFor="only" className=''>interest only</label>
+                    </div>
+                    <span className='error-radio'></span>
                 </div>
             </form>
         </>
