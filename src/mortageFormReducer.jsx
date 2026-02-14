@@ -1,9 +1,16 @@
-export const mortageValue = {
+
+export const initialState = {
     amount: 0,
     term: 0,
     interestRate: 0,
-    repaymanet: false,
-    intOnly: false,
+    mortageType: '',
+    errorMortage:{
+        errorAmount: false,
+        errorTerm: false,
+        errorRate: false,
+        errorType: false,
+    },
+    result: null,
 }
 
 export const mortageReducer = (state, action) => {

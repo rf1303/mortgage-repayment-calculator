@@ -1,10 +1,10 @@
 import { createContext, useContext, useReducer } from 'react';
-import { mortageReducer, mortageValues } from './mortageFormReducer.jsx';
+import { mortageReducer, initialState } from './mortageFormReducer.jsx';
 
 const MortageContext = createContext();
 
 export const MortageProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(mortageReducer, mortageValues);
+    const [state, dispatch] = useReducer(mortageReducer, initialState);
     return (
         <MortageContext.Provider value={{ state, dispatch }}> 
         { children }

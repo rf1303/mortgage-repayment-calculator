@@ -1,61 +1,70 @@
 import { useMortageAmount } from './mortageContext.jsx'
+import { IconCalculator } from '../src/assets/IconsSvg.jsx'
+import { ErrorField } from './Error-field.jsx'
 
 
 export const MortageForm = () => {
     const [state, dispatch] = useMortageAmount();
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         console.log('state submit:', state)
-        return
+        return (
+        <div></div>
+        );
     }
     const handleChange = (e) => {
-        const { amount, term, interestRate, repayment, intOnly } = e.target;
-        console.log('e.target:', e.target)
+        const { name, value } = e.target;
+        console.log('name:', name);
+        console.log('value:', value);
     }
+
+
     return (
         <>
             <header className=''>
                 <h1 className=''>mortage calculator</h1>
                 <button type='reset' className=''>clear all</button>
             </header>
-            <form onSubmit={handleSubmit} i className=''>
+            <form onSubmit={handleSubmit}  className=''>
                 <div className=''>
-                    <label htmlFor="amount-id">mortage amount</label>
+                    <label htmlFor="amount">mortage amount</label>
                     <div className=''>
-                        <input type="number" aria-label='mortage amount' id='amount-id' name='amount-id' onChange={handleChange} />
+                        <input type="number" aria-label='mortage amount' id='amount' name='amount' value={state.amount} onChange={handleChange} />
                         <span className=''>&pound;</span>
                     </div>
-                    <span className='error-amount'></span>
+                    <ErrorField e={`cv`} />
                 </div>
                 <div className=''>
                     <div className=''>
-                        <label htmlFor="term-id">mortage term</label>
+                        <label htmlFor="term">mortage term</label>
                         <div className=''>
-                            <input type="number" aria-label='mortage term' id='term-id' name='term-id' onChange={handleChange} />
+                            <input type="number" aria-label='mortage term' id='term' name='term' onChange={handleChange} />
                             <span className=''>years</span>
                         </div>
-                        <span className='error-term'></span>
+                        <span className='error' id='error-term' aria-hidden="true"></span>
                     </div>
                     <div className=''>
                         <label htmlFor="rate-id">interest rate</label>
                         <div className=''>
-                            <input type="number" aria-label='interest rate' id='rate-id' name='rate-id' onChange={handleChange} />
+                            <input type="number" aria-label='interest rate' id='rate' name='rate-id' onChange={handleChange} />
                             <span className=''>%</span>
                         </div>
-                        <span className='error-rate'></span>
+                        <span className='error' id="error-rate" aria-hidden="true"></span>
                     </div>
                 </div>
-                <div className=''>
-                    <h2 className=''>mortage type</h2>
+                <fieldset className='' id='radio'>
+                    <legend className=''>mortage type</legend>
                     <div className=''>
-                        <input type="radio" name="repayment" id="repayment" />
+                        <input type="radio" name="type" id="repayment" />
                         <label htmlFor="repayment" className=''>repayment</label>
                     </div>
                     <div className=''>
                         <input type="radio" name="type" id="only" />
                         <label htmlFor="only" className=''>interest only</label>
                     </div>
-                    <span className='error-radio'></span>
-                </div>
+                    <span className='error' id='error-radio' aria-hidden="true"></span>
+                </fieldset>
+                <button type='submit' className=''><IconCalculator /> </button>
             </form>
         </>
     );
