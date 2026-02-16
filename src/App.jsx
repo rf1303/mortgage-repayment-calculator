@@ -6,7 +6,7 @@ function App() {
 
     return (
         <MortageProvider>
-            <main>
+            <main className='bg-white text capitalize font-plusJakarta py-8 px-6 grid gap-6'>
                 <MortageForm />
             </main>
         </MortageProvider>

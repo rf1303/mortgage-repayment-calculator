@@ -2,7 +2,7 @@
 export const initialState = {
     amount: 0,
     term: 0,
-    interestRate: 0,
+    rate: 0,
     mortageType: '',
     errorMortage:{
         errorAmount: false,
@@ -16,4 +16,5 @@ export const initialState = {
 export const mortageReducer = (state, action) => {
     console.log('state:', state);
     console.log('action:', action)
+    return state;
 }
