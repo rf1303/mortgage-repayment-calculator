@@ -12,17 +12,19 @@ export const MortageForm = () => {
         const errorsForm = MortageValidForm(state);
         const hasErrors = Object.values(errorsForm).some(value => value === true);
 
-        if (hasErrors) return dispatch({ type: "ERRORS", errorsForm })
+        if (hasErrors)  return dispatch({ type: "ERRORS", errorsForm }) 
 
-        const result = MortageFormCalculate(state);
-        dispatch({ type: "RESULTS", result });
+        const result = MortageFormCalculate(state.amount, state.term, state.rate, state.mortageType);
+        dispatch({errorMortage: {} });
+        console.log('errorMortage:', state.errorMortage)
+        dispatch({ type: "RESULT", result });
     }
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         console.log('dispatch name - value:', name, ' ', value);
         dispatch({
-            type: 'UPDATE_FIELD',
+            type: 'UPDATE',
             field: name,
             value: value
         });
@@ -48,7 +50,7 @@ export const MortageForm = () => {
                     <div className='grid gap-3'>
                         <label htmlFor="term" className='form__label' >mortage term</label>
                         <div className='label__inputs justify-between'>
-                            <input type="number" aria-label='mortage term' id='term' name='term' value={state.amount} onChange={handleChange} className='inputs__preset' />
+                            <input type="number" aria-label='mortage term' id='term' name='term' value={state.term} onChange={handleChange} className='inputs__preset' />
                             <span className='input__items rounded-r-xl'>years</span>
                         </div>
                         <span className='error sr-only' id='error-term' aria-hidden="true"></span>
@@ -56,7 +58,7 @@ export const MortageForm = () => {
                     <div className='grid gap-3'>
                         <label htmlFor="rate" className='form__label'>interest rate</label>
                         <div className='label__inputs justify-between'>
-                            <input type="number" aria-label='interest rate' id='rate' name='rate' value={state.amount} onChange={handleChange} className='inputs__preset' />
+                            <input type="number" aria-label='interest rate' id='rate' name='rate' value={state.rate} onChange={handleChange} className='inputs__preset' />
                             <span className='input__items rounded-r-xl'>%</span>
                         </div>
                         <span className='error sr-only' id="error-rate" aria-hidden="true"></span>
