@@ -1,17 +1,23 @@
 import { useMortageAmount } from '../mortageContext.jsx'
 import { IconCalculator } from '../assets/IconsSvg.jsx'
+import { MortageValidForm } from './MortageFormValid.jsx';
 import { ErrorField } from './Error-field.jsx'
+import { MortageFormCalculate } from '../MortageCalculate.jsx';
 
 
 export const MortageForm = () => {
     const { state, dispatch } = useMortageAmount();
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('state submit:', state)
-        return (
-            <div></div>
-        );
+        const errorsForm = MortageValidForm(state);
+        const hasErrors = Object.values(errorsForm).some(value => value === true);
+
+        if (hasErrors) return dispatch({ type: "ERRORS", errorsForm })
+
+        const result = MortageFormCalculate(state);
+        dispatch({ type: "RESULTS", result });
     }
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         console.log('dispatch name - value:', name, ' ', value);
