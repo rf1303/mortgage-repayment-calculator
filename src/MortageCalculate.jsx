@@ -1,7 +1,7 @@
 export const MortageFormCalculate = (amount, term, rate, mortageType) => {
-    const amountCalc = parseFloat(amount);
-    const termCalc = parseFloat(term) * 12;
-    const rateCalc = parseFloat(rate) / 100 / 12;
+    const amountCalc = Number(amount);
+    const termCalc = Number(term) * 12;
+    const rateCalc = Number(rate) / 100 / 12;
 
     if (mortageType === "repayment") {
         const monthly = (amountCalc * rateCalc * Math.pow(1 + rateCalc, termCalc)) / (Math.pow(1 + rateCalc, termCalc) - 1);

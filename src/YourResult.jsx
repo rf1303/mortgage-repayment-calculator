@@ -15,11 +15,11 @@ export const YourResults = () => {
             <section className="bg-slate-950/25 rounded-xl py-6 px-4 divide-y divide-slate-200/45 grid gap-4 shadow-xl shadow-slate-950/30">
                 <div className="grid gap-2 pb-4">
                     <span className="text-slate-300 text-preset-4 font-medium">Your monthly repayments</span>
-                    <p className="text-preset-1 text-lime font-bold leading-none">&pound; {`1,777.000`}</p>
+                    <p className="text-preset-1 text-lime font-bold leading-none">&pound;{`1,777.000`}</p>
                 </div>
                 <div className="grid gap-2">
                     <span className="text-slate-300 text-preset-4 font-medium">Total you'll repay over the term
-                        <p className="text-white text-preset-2 font font-bold">&pound; {`539,333.90`}</p>
+                        <p className="text-white text-preset-2 font font-bold">&pound;{`539,333.90`}</p>
                     </span>
                 </div>
             </section>

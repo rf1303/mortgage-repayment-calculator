@@ -1,15 +1,14 @@
 
 export const initialState = {
-    amount: 0,
-    term: 0,
-    rate: 0,
-    mortageType: '',
+    amount: "",
+    term: "",
+    rate: "",
+    mortageType: "",
     errorMortage: {},
     result: null,
 }
 
 export const mortageReducer = (state, action) => {
-    console.log('state - action:', state, action);
     switch (action.type) {
         case "UPDATE":
             return {
@@ -25,6 +24,12 @@ export const mortageReducer = (state, action) => {
         case "RESULT":
             return {
                 ...state, result: action.result, errorMortage: {}
+            };
+        case "MORTAGE_TYPE":
+                console.log('action.payload:', action.payload)
+            return {
+                ...state,
+                mortageType: action.payload,
             };
         case "CLEAR_ALL":
             return initialState;

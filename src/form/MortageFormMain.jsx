@@ -12,17 +12,17 @@ export const MortageForm = () => {
         const errorsForm = MortageValidForm(state);
         const hasErrors = Object.values(errorsForm).some(value => value === true);
 
-        if (hasErrors)  return dispatch({ type: "ERRORS", errorsForm }) 
+        if (hasErrors) return dispatch({ type: "ERRORS", errorsForm })
 
         const result = MortageFormCalculate(state.amount, state.term, state.rate, state.mortageType);
-        dispatch({errorMortage: {} });
+        dispatch({ errorMortage: {} });
         console.log('errorMortage:', state.errorMortage)
+        console.log('result:', result)
         dispatch({ type: "RESULT", result });
     }
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log('dispatch name - value:', name, ' ', value);
         dispatch({
             type: 'UPDATE',
             field: name,
@@ -30,6 +30,12 @@ export const MortageForm = () => {
         });
     }
 
+    const handleMortageType = (e) => {
+        dispatch({
+            type: "MORTAGE_TYPE",
+            payload: e.target.value,
+        });
+    }
 
     return (
         <>
@@ -67,11 +73,12 @@ export const MortageForm = () => {
                 <fieldset className='grid gap-3' id='radio'>
                     <legend className='form__label mb-3'>mortage type</legend>
                     <div className='inputs__radio'>
-                        <input type="radio" name="mortageType" value="repayment" id="repayment" className='type__radio' />
+                        <input type="radio" name="mortageType" value="repayment" checked={state.mortageType === "repayment"} id="repayment" onChange={handleMortageType} className='type__radio' />
+
                         <label htmlFor="repayment" className='text-slate-900 text-preset-3 font-bold leading-none'>repayment</label>
                     </div>
                     <div className='inputs__radio'>
-                        <input tabIndex="0" type="radio" name="mortageType" value="only" id="only" className='type__radio' />
+                        <input tabIndex="0" type="radio" name="mortageType" value="only" checked={state.mortageType === "only"} id="only" onChange={handleMortageType} className='type__radio' />
                         <label htmlFor="only" className='text-slate-900 text-preset-3 font-bold leading-none'>interest only</label>
                     </div>
                     <span className='error sr-only' id='error-radio' aria-hidden="true"></span>
