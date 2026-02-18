@@ -70,7 +70,7 @@ body,
 }
 
 .label__inputs {
-    @apply max-h-12 flex items-center outline outline-slate-500 rounded-xl z-50;
+    @apply max-h-12 flex items-center outline outline-slate-500 rounded-xl z-50  focus:outline-slate-900 focus-within:outline-slate-900;
 }
 
 .inputs__preset {

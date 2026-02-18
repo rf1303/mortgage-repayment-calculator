@@ -15,8 +15,6 @@ export const MortageForm = () => {
         if (hasErrors) return dispatch({ type: "ERRORS", errorsForm })
 
         const result = MortageFormCalculate(state.amount, state.term, state.rate, state.mortageType);
-        dispatch({ errorMortage: {} });
-        console.log('errorMortage:', state.errorMortage)
         console.log('result:', result)
         dispatch({ type: "RESULT", result });
     }
