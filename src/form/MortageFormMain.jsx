@@ -15,7 +15,6 @@ export const MortageForm = () => {
         if (hasErrors) return dispatch({ type: "ERRORS", errorsForm })
 
         const result = MortageFormCalculate(state.amount, state.term, state.rate, state.mortageType);
-        console.log('result:', result)
         dispatch({ type: "RESULT", result });
     }
 
@@ -42,33 +41,33 @@ export const MortageForm = () => {
                 <button type='reset' className='text-slate-700 text-preset-4 '>clear all</button>
             </header>
             <form onSubmit={handleSubmit} className='grid gap-6'>
-                <div className='grid gap-3'>
+                <div className='grid gap-3  focus-within:cursor-pointer'>
                     <label htmlFor="amount" className='form__label'>mortage amount</label>
                     <div className='label__inputs justify-start'>
-                        <span className='input__items rounded-l-xl'>&pound;</span>
+                        <span className='input__items w-11 rounded-l-xl'>&pound;</span>
                         <input type="number" aria-label='mortage amount' id='amount' name='amount' value={state.amount} onChange={handleChange} className='inputs__preset' />
                     </div>
                     {/* <ErrorField e={`cv`} /> */}
                 </div>
-                <div className='grid gap-6'>
-                    <div className='grid gap-3'>
+                <div className='grid gap-6 md:grid-cols-2 md:gap-6'>
+                    <div className='grid gap-3 w-full '>
                         <label htmlFor="term" className='form__label' >mortage term</label>
                         <div className='label__inputs justify-between'>
                             <input type="number" aria-label='mortage term' id='term' name='term' value={state.term} onChange={handleChange} className='inputs__preset' />
-                            <span className='input__items rounded-r-xl'>years</span>
+                            <span className='input__items w-20 rounded-r-xl'>years</span>
                         </div>
                         <span className='error sr-only' id='error-term' aria-hidden="true"></span>
                     </div>
-                    <div className='grid gap-3'>
+                    <div className='grid gap-3  w-full'>
                         <label htmlFor="rate" className='form__label'>interest rate</label>
-                        <div className='label__inputs justify-between'>
+                        <div className='label__inputs justify-between '>
                             <input type="number" aria-label='interest rate' id='rate' name='rate' value={state.rate} onChange={handleChange} className='inputs__preset' />
-                            <span className='input__items rounded-r-xl'>%</span>
+                            <span className='input__items w-13 rounded-r-xl'>%</span>
                         </div>
                         <span className='error sr-only' id="error-rate" aria-hidden="true"></span>
                     </div>
                 </div>
-                <fieldset className='grid gap-3' id='radio'>
+                <fieldset className='grid gap-3 ' id='radio'>
                     <legend className='form__label mb-3'>mortage type</legend>
                     <div className='inputs__radio'>
                         <input type="radio" name="mortageType" value="repayment" checked={state.mortageType === "repayment"} id="repayment" onChange={handleMortageType} className='type__radio' />

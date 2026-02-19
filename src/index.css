@@ -61,22 +61,44 @@ body,
     --font-plusJakarta: plusJakarta, sans-serif;
 }
 
-.form__label {
-    @apply text-slate-700 text-preset-4 font-medium leading-none;
+.wrapper__body {
+    inline-size: min(43rem, 100%);
+    display: grid;
+    place-items: center;
+    margin-inline: auto;
+    padding-block: 2.5rem; 
+    border-radius: 1rem; 
 }
 
-.input__items {
-    @apply bg-slate-100 text-slate-700 text-preset-4 font-bold py-3 px-4 z-20;
+.form__label {
+    @apply text-slate-700 text-preset-4 font-medium leading-none ;
 }
 
 .label__inputs {
-    @apply max-h-12 flex items-center outline outline-slate-500 rounded-xl z-50  focus:outline-slate-900 focus-within:outline-slate-900;
+    @apply  max-h-12 flex items-center  outline-2 outline-slate-500 rounded-xl  hover:outline-lime hover:cursor-pointer ;
+}
+
+.label__inputs:focus-within {
+    outline-color: var(--color-lime);
+}
+
+.label__inputs:focus-within .input__items {
+    background-color: var(--color-lime);
+}
+
+.input__items {
+    @apply min-h-12 bg-slate-100 text-slate-700 text-preset-3  font-bold flex items-center justify-center;
 }
 
 .inputs__preset {
-    @apply text-preset-3 text-slate-900 font-bold px-3;
+    @apply text-preset-3 text-slate-900 font-bold px-3 w-full ;
 }
 
+/* .inputs__preset:focus-within { */
+/**/
+/*     background-color: var(--color-lime); */
+/* } */
+/**/
 .inputs__radio {
     @apply flex items-center justify-start gap-4 px-4 py-3 outline outline-slate-500 rounded-xl;
 }

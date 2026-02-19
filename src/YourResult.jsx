@@ -1,8 +1,25 @@
+import { IllustrationEmpty } from './assets/IconsSvg.jsx';
 import { useMortageAmount } from './mortageContext.jsx'
 
 export const YourResults = () => {
     const { state } = useMortageAmount();
     const { result } = state;
+
+    if (!result) {
+        return (
+            <div className='grid place-items-center gap-4'>
+                <div className="w-48 h-48">
+                  <IllustrationEmpty />
+                </div>
+                <header className="grid place-items-center gap-4 ">
+                    <h3 className="text-white text-preset-2 font-bold">Results shown here</h3>
+                    <p className="text-slate-300 text-preset-4 text-center font-medium"> Complete the form and click “calculate repayments” to see what
+                        your monthly repayments would be.
+                    </p>
+                </header>
+            </div>
+        );
+    }
 
     return (
         <>
@@ -10,7 +27,7 @@ export const YourResults = () => {
                 <h3 className="text-white text-preset-2 font-bold">Your result</h3>
                 <p className="text-slate-300 text-preset-4 font-medium">
                     Your results are shown below based on the information you provided.
-                    To adjust the results, edit the form and click “calculate repayments” again.
+                    To adjust the results, edit the form and click "calculate repayments" again.
                 </p>
             </header>
             <section className="bg-slate-950/25 rounded-xl py-6 px-4 divide-y divide-slate-200/45 grid gap-4 shadow-xl shadow-slate-950/30">
@@ -19,9 +36,8 @@ export const YourResults = () => {
                     <p className="text-preset-1 text-lime font-bold leading-none">&pound;{result.monthly.toFixed(2)}</p>
                 </div>
                 <div className="grid gap-2">
-                    <span className="text-slate-300 text-preset-4 font-medium">Total you'll repay over the term
-                        <p className="text-white text-preset-2 font font-bold">&pound;{result.totalAmount.toFixed(2)}</p>
-                    </span>
+                    <span className="text-slate-300 text-preset-4 font-medium">Total you'll repay over the term</span>
+                    <p className="text-white text-preset-2 font-bold">&pound;{result.totalAmount.toFixed(2)}</p>
                 </div>
             </section>
         </>
