@@ -25,7 +25,9 @@ body,
     min-height: 100vh;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
+    @apply lg:grid lg:place-items-center;
 }
+
 /**/
 /* :root { */
 /*     color-scheme: light dark; */
@@ -62,20 +64,15 @@ body,
 }
 
 .wrapper__body {
-    inline-size: min(43rem, 100%);
-    display: grid;
-    place-items: center;
-    margin-inline: auto;
-    padding-block: 2.5rem; 
-    border-radius: 1rem; 
+    @apply w-full max-w-172 grid place-items-center mx-auto py-10 lg:grid-cols-2 lg:max-w-252 lg:h-151.5 lg:p-0 lg:bg-white lg:rounded-3xl;
 }
 
 .form__label {
-    @apply text-slate-700 text-preset-4 font-medium leading-none ;
+    @apply text-slate-700 text-preset-4 font-medium leading-none;
 }
 
 .label__inputs {
-    @apply  max-h-12 flex items-center  outline-2 outline-slate-500 rounded-xl  hover:outline-lime hover:cursor-pointer ;
+    @apply max-h-12 flex items-center outline-2 outline-slate-500 rounded-xl hover:outline-lime hover:cursor-pointer;
 }
 
 .label__inputs:focus-within {
@@ -87,11 +84,11 @@ body,
 }
 
 .input__items {
-    @apply min-h-12 bg-slate-100 text-slate-700 text-preset-3  font-bold flex items-center justify-center;
+    @apply min-h-12 bg-slate-100 text-slate-700 text-preset-3 font-bold flex items-center justify-center;
 }
 
 .inputs__preset {
-    @apply text-preset-3 text-slate-900 font-bold px-3 w-full ;
+    @apply text-preset-3 text-slate-900 font-bold px-3 w-full;
 }
 
 /* .inputs__preset:focus-within { */
