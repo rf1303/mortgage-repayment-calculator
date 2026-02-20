@@ -1,7 +1,6 @@
 import { useMortageAmount } from '../mortageContext.jsx'
 import { IconCalculator } from '../assets/IconsSvg.jsx'
 import { MortageValidForm } from './MortageFormValid.jsx';
-import { ErrorField } from './Error-field.jsx'
 import { MortageFormCalculate } from '../MortageCalculate.jsx';
 
 
@@ -51,7 +50,7 @@ export const MortageForm = () => {
                         <span className='input__items w-11 rounded-l-xl'>&pound;</span>
                         <input type="number" aria-label='mortage amount' id='amount' name='amount' value={state.amount} onChange={handleChange} className='inputs__preset' />
                     </div>
-                    {/* <ErrorField e={`cv`} /> */}
+                    {state.errorMortage.amount &&( <ErrorField hasError={state.errorMortage.amount} />)}
                 </div>
                 <div className='grid gap-6 md:grid-cols-2 md:gap-6'>
                     <div className='grid gap-3 w-full '>

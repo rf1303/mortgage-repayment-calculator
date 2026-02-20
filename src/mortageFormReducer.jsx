@@ -19,14 +19,14 @@ export const mortageReducer = (state, action) => {
             };
         case "ERRORS":
             return {
-                ...state, errorMortage: action.error
+                 ...state, errorMortage: action.error
             };
         case "RESULT":
             return {
                 ...state, result: action.result, errorMortage: {}
             };
         case "MORTAGE_TYPE":
-                console.log('action.payload:', action.payload)
+            console.log('action.payload:', action.payload)
             return {
                 ...state,
                 mortageType: action.payload,

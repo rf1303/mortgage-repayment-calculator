@@ -1,5 +1,3 @@
-import { useMortageAmount } from '../mortageContext.jsx';
-
 export const MortageValidForm = (state) => {
     const errors = {};
 
