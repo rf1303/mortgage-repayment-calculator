@@ -47,8 +47,8 @@ export const MortageForm = () => {
             <form onSubmit={handleSubmit} className='grid gap-6'>
                 <div className='grid gap-3  focus-within:cursor-pointer'>
                     <label htmlFor="amount" className='form__label'>mortage amount</label>
-                    <div className='label__inputs justify-start'>
-                        <span className='input__items w-11 rounded-l-xl'>&pound;</span>
+                    <div className={`label__inputs ${state.errorMortage?.rate ? 'outline-red' : 'outline-slate-500'} justify-start `}>
+                        <span className={`input__items w-11 rounded-l-xl ${state.errorMortage?.amount ? 'bg-red text-white' : 'bg-slate-100 text-slate-700' }`}>&pound;</span>
                         <input type="number" aria-label='mortage amount' id='amount' name='amount' value={state.amount} onChange={handleChange} className='inputs__preset' />
                     </div>
                     {state.errorMortage?.amount && <ErrorField hasError={true} />}
@@ -56,17 +56,17 @@ export const MortageForm = () => {
                 <div className='grid gap-6 md:grid-cols-2 md:gap-6'>
                     <div className='grid gap-3 w-full '>
                         <label htmlFor="term" className='form__label' >mortage term</label>
-                        <div className='label__inputs justify-between'>
+                        <div className={`label__inputs ${state.errorMortage?.rate ? 'outline-red' : 'outline-slate-500'} justify-between `}>
                             <input type="number" aria-label='mortage term' id='term' name='term' value={state.term} onChange={handleChange} className='inputs__preset' />
-                            <span className='input__items w-20 rounded-r-xl'>years</span>
+                            <span className={`input__items w-20 rounded-r-xl ${state.errorMortage?.term ? 'bg-red text-white' : 'bg-slate-100 text-slate-700'  }`}>years</span>
                         </div>
                         {state.errorMortage?.term && <ErrorField hasError={true} />}
                     </div>
                     <div className='grid gap-3  w-full'>
                         <label htmlFor="rate" className='form__label'>interest rate</label>
-                        <div className='label__inputs justify-between '>
+                        <div className={`label__inputs ${state.errorMortage?.rate ? 'outline-red' : 'outline-slate-500'} justify-between `}>
                             <input type="number" aria-label='interest rate' id='rate' name='rate' value={state.rate} onChange={handleChange} className='inputs__preset' />
-                            <span className='input__items w-13 rounded-r-xl'>%</span>
+                            <span className={`input__items w-13 rounded-r-xl ${state.errorMortage?.rate ? 'bg-red text-white' : 'bg-slate-100 text-slate-700' }`}>%</span>
                         </div>
                         {state.errorMortage?.rate && <ErrorField hasError={true} />}
                     </div>

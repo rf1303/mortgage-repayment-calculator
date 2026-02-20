@@ -76,7 +76,7 @@ body,
 }
 
 .label__inputs {
-    @apply max-h-12 flex items-center outline-2 outline-slate-500 rounded-xl hover:outline-slate-900 hover:cursor-pointer;
+    @apply max-h-12 flex items-center outline-2 rounded-xl hover:outline-slate-900 hover:cursor-pointer;
 }
 
 .label__inputs:focus-within {
@@ -88,7 +88,7 @@ body,
 }
 
 .input__items {
-    @apply min-h-12 bg-slate-100 text-slate-700 text-preset-3 font-bold flex items-center justify-center;
+    @apply min-h-12   text-preset-3 font-bold flex items-center justify-center;
 }
 
 .inputs__preset {
