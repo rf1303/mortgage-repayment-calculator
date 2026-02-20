@@ -14,7 +14,7 @@ export const mortageReducer = (state, action) => {
             return {
                 ...state,
                 [action.field]: action.value,
-                errorMortage: { ...state.errorMortage, [action.field]: "" },
+                errorMortage: { ...state.errorMortage, [action.field]: false },
                 result: null,
             };
         case "ERRORS":

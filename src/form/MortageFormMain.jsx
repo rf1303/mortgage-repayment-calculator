@@ -1,6 +1,7 @@
 import { useMortageAmount } from '../mortageContext.jsx'
 import { IconCalculator } from '../assets/IconsSvg.jsx'
 import { MortageValidForm } from './MortageFormValid.jsx';
+import { ErrorField } from './Error-field.jsx'
 import { MortageFormCalculate } from '../MortageCalculate.jsx';
 
 
@@ -50,7 +51,7 @@ export const MortageForm = () => {
                         <span className='input__items w-11 rounded-l-xl'>&pound;</span>
                         <input type="number" aria-label='mortage amount' id='amount' name='amount' value={state.amount} onChange={handleChange} className='inputs__preset' />
                     </div>
-                    {state.errorMortage.amount &&( <ErrorField hasError={state.errorMortage.amount} />)}
+                    {state.errorMortage?.amount && <ErrorField hasError={true} />}
                 </div>
                 <div className='grid gap-6 md:grid-cols-2 md:gap-6'>
                     <div className='grid gap-3 w-full '>
@@ -59,7 +60,7 @@ export const MortageForm = () => {
                             <input type="number" aria-label='mortage term' id='term' name='term' value={state.term} onChange={handleChange} className='inputs__preset' />
                             <span className='input__items w-20 rounded-r-xl'>years</span>
                         </div>
-                        <span className='error sr-only' id='error-term' aria-hidden="true"></span>
+                        {state.errorMortage?.term && <ErrorField hasError={true} />}
                     </div>
                     <div className='grid gap-3  w-full'>
                         <label htmlFor="rate" className='form__label'>interest rate</label>
@@ -67,7 +68,7 @@ export const MortageForm = () => {
                             <input type="number" aria-label='interest rate' id='rate' name='rate' value={state.rate} onChange={handleChange} className='inputs__preset' />
                             <span className='input__items w-13 rounded-r-xl'>%</span>
                         </div>
-                        <span className='error sr-only' id="error-rate" aria-hidden="true"></span>
+                        {state.errorMortage?.rate && <ErrorField hasError={true} />}
                     </div>
                 </div>
                 <fieldset className='grid gap-3 ' id='radio'>
@@ -81,7 +82,7 @@ export const MortageForm = () => {
                         <input tabIndex="0" type="radio" name="mortageType" value="only" checked={state.mortageType === "only"} id="only" onChange={handleMortageType} className='type__radio' />
                         <label htmlFor="only" className='text-slate-900 text-preset-3 font-bold leading-none'>interest only</label>
                     </div>
-                    <span className='error sr-only' id='error-radio' aria-hidden="true"></span>
+                    {state.errorMortage?.mortageType && <ErrorField hasError={true} />}
                 </fieldset>
                 <button type='submit' className='flex items-center justify-center text-preset-4 text-slate-900 font-bold bg-lime py-3 rounded-4xl capitalize cursor-pointer hover:bg-lime/60 focus-within:bg-lime/60 '><IconCalculator /> calculate repayments</button>
             </form>
