@@ -12,7 +12,7 @@ export const MortageForm = () => {
         const errorsForm = MortageValidForm(state);
         const hasErrors = Object.values(errorsForm).some(value => value === true);
 
-        if (hasErrors) return dispatch({ type: "ERRORS", errorsForm })
+        if (hasErrors) return dispatch({ type: "ERRORS", error: errorsForm })
 
         const result = MortageFormCalculate(state.amount, state.term, state.rate, state.mortageType);
         dispatch({ type: "RESULT", result });
