@@ -33,12 +33,16 @@ export const MortageForm = () => {
             payload: e.target.value,
         });
     }
+    
+    const handleReset = () => {
+        dispatch({ type:"CLEAR_ALL" });
+    }
 
     return (
         <>
-            <header className='flex flex-col items-start justify-start '>
+            <header className='flex flex-col items-start justify-start gap-2 md:flex-row md:justify-between'>
                 <h1 className='text-slate-900 text-preset-2 font-bold capitalize'>mortage calculator</h1>
-                <button type='reset' className='text-slate-700 text-preset-4 '>clear all</button>
+                <button type='reset' className='btn__reset' onClick={handleReset}>clear all</button>
             </header>
             <form onSubmit={handleSubmit} className='grid gap-6'>
                 <div className='grid gap-3  focus-within:cursor-pointer'>
@@ -80,7 +84,7 @@ export const MortageForm = () => {
                     </div>
                     <span className='error sr-only' id='error-radio' aria-hidden="true"></span>
                 </fieldset>
-                <button type='submit' className='flex items-center justify-center text-preset-4 text-slate-900 font-bold bg-lime py-3 rounded-4xl capitalize'><IconCalculator /> calculate repayments</button>
+                <button type='submit' className='flex items-center justify-center text-preset-4 text-slate-900 font-bold bg-lime py-3 rounded-4xl capitalize cursor-pointer hover:bg-lime/60 focus-within:bg-lime/60 '><IconCalculator /> calculate repayments</button>
             </form>
         </>
     );

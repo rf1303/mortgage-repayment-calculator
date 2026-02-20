@@ -14,7 +14,6 @@ body {
     -moz-box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
@@ -64,7 +63,12 @@ body,
 }
 
 .wrapper__body {
-    @apply w-full max-w-172 grid place-items-center mx-auto py-10 lg:grid-cols-2 lg:max-w-252 lg:h-151.5 lg:p-0 lg:bg-white lg:rounded-3xl;
+    @apply w-full max-w-172 grid place-items-center mx-auto md:py-10 lg:grid-cols-2 lg:max-w-252 lg:h-151.5 lg:p-0 lg:bg-white lg:rounded-3xl;
+}
+
+.btn__reset {
+    @apply text-slate-700 text-preset-4 capitalize cursor-pointer hover:text-slate-900 hover:underline hover:underline-offset-4 focus-within:text-slate-900 focus-within:underline focus-within:underline-offset-4
+
 }
 
 .form__label {
@@ -72,7 +76,7 @@ body,
 }
 
 .label__inputs {
-    @apply max-h-12 flex items-center outline-2 outline-slate-500 rounded-xl hover:outline-lime hover:cursor-pointer;
+    @apply max-h-12 flex items-center outline-2 outline-slate-500 rounded-xl hover:outline-slate-900 hover:cursor-pointer;
 }
 
 .label__inputs:focus-within {
@@ -88,14 +92,14 @@ body,
 }
 
 .inputs__preset {
-    @apply text-preset-3 text-slate-900 font-bold px-3 w-full;
+    @apply appearance-none text-preset-3 text-slate-900 font-bold px-3 w-full;
+}
+.inputs__preset::-webkit-outer-spin-button,
+.inputs__preset::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
 }
 
-/* .inputs__preset:focus-within { */
-/**/
-/*     background-color: var(--color-lime); */
-/* } */
-/**/
 .inputs__radio {
     @apply flex items-center justify-start gap-4 px-4 py-3 outline outline-slate-500 rounded-xl;
 }
