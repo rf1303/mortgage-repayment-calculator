@@ -6,8 +6,8 @@ const MortageContext = createContext();
 export const MortageProvider = ({ children }) => {
     const [state, dispatch] = useReducer(mortageReducer, initialState);
     return (
-        <MortageContext.Provider value={{ state, dispatch }}> 
-        { children }
+        <MortageContext.Provider value={{ state, dispatch }}>
+            {children}
         </MortageContext.Provider>
     );
 };
