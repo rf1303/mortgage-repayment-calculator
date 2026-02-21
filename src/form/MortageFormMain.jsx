@@ -44,40 +44,40 @@ export const MortageForm = () => {
                 <h1 className='text-slate-900 text-preset-2 font-bold capitalize'>mortage calculator</h1>
                 <button type='reset' className='btn__reset' onClick={handleReset}>clear all</button>
             </header>
-            <form onSubmit={handleSubmit} className='grid gap-6'>
+            <form noValidate onSubmit={handleSubmit} className='grid gap-6'>
                 <div className='grid gap-3  focus-within:cursor-pointer'>
                     <label htmlFor="amount" className='form__label'>mortage amount</label>
                     <div className={`label__inputs ${state.errorMortage?.amount ? 'outline-red' : 'outline-slate-500'} justify-start`}>
                         <span className={`input__items w-11 rounded-l-xl ${state.errorMortage?.amount ? 'bg-red text-white' : 'bg-slate-100 text-slate-700'}`}>&pound;</span>
-                        <input type="number" id='amount' name='amount' className='inputs__preset'
+                        <input type="number" id='amount' name='amount' className='inputs__preset' required
                                value={state.amount} onChange={handleChange} 
-                               aria-invalid={state.errorMortage?.amount ? true : 'false'}
+                               aria-invalid={state.errorMortage?.amount ? 'true' : 'false'}
                                aria-describedby={state.errorMortage?.amount ? 'error-amount' : undefined } />
                     </div>
-                    {state.errorMortage?.amount && <ErrorField hasError={true} />}
+                    {state.errorMortage?.amount && <ErrorField hasError={true} id="error-amount" />}
                 </div>
                 <div className={`grid gap-6 md:grid-cols-2 md:gap-6 ${state.errorMortage?.term || state.errorMortage?.rate ? 'mb-0' : ''}`}>
                     <div className='flex flex-col gap-3 w-full '>
                         <label htmlFor="term" className='form__label' >mortage term</label>
                         <div className={`label__inputs ${state.errorMortage?.term ? 'outline-red' : 'outline-slate-500'} justify-between`}>
-                            <input type="number" id='term' name='term' value={state.term} className='inputs__preset'
+<input type="number" id='term' name='term' value={state.term} className='inputs__preset' required
                                    onChange={handleChange}  
-                            aria-invalid={state.errorMortage?.term ? true : 'false'}
-                               aria-describedby={state.errorMortage?.term ? 'error-term' : undefined } />
+                                   aria-invalid={state.errorMortage?.term ? 'true' : 'false'}
+                                   aria-describedby={state.errorMortage?.term ? 'error-term' : undefined } />
                             <span className={`input__items w-20 rounded-r-xl ${state.errorMortage?.term ? 'bg-red text-white' : 'bg-slate-100 text-slate-700'}`}>years</span>
                         </div>
-                        {state.errorMortage?.term && <ErrorField hasError={true} />}
+                        {state.errorMortage?.term && <ErrorField hasError={true} id="error-term" />}
                     </div>
                     <div className='flex flex-col gap-3  w-full'>
                         <label htmlFor="rate" className='form__label'>interest rate</label>
                         <div className={`label__inputs ${state.errorMortage?.rate ? 'outline-red' : 'outline-slate-500'} justify-between `}>
-                            <input type="number" id='rate' name='rate' value={state.rate}
+<input type="number" id='rate' name='rate' value={state.rate} required
                                 onChange={handleChange} className='inputs__preset' 
-                            aria-invalid={state.errorMortage?.rate ? true : 'false'}
-                               aria-describedby={state.errorMortage?.rate ? 'error-rate' : undefined } />
+                                aria-invalid={state.errorMortage?.rate ? 'true' : 'false'}
+                                aria-describedby={state.errorMortage?.rate ? 'error-rate' : undefined } />
                             <span className={`input__items w-13 rounded-r-xl ${state.errorMortage?.rate ? 'bg-red text-white' : 'bg-slate-100 text-slate-700'}`}>%</span>
                         </div>
-                        {state.errorMortage?.rate && <ErrorField hasError={true} />}
+                        {state.errorMortage?.rate && <ErrorField hasError={true} id="error-rate" />}
                     </div>
                 </div>
                 <fieldset className="grid gap-3" id='radio'>
@@ -91,7 +91,7 @@ export const MortageForm = () => {
                         <input tabIndex="0" type="radio" name="mortageType" value="only" checked={state.mortageType === "only"} id="only" onChange={handleMortageType} className='type__radio' />
                         <label htmlFor="only" className='text-slate-900 text-preset-3 font-bold leading-none'>interest only</label>
                     </div>
-                    {state.errorMortage?.mortageType && <ErrorField hasError={true} />}
+                    {state.errorMortage?.mortageType && <ErrorField hasError={true} id="error-mortageType" />}
                 </fieldset>
                 <button type='submit' className='flex items-center justify-center text-preset-4 text-slate-900 font-bold bg-lime py-3 mt-4 rounded-4xl capitalize cursor-pointer md:max-w-78 hover:bg-lime/60 focus-within:bg-lime/60 '>
                     <IconCalculator /> calculate repayments
