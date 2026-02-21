@@ -68,7 +68,6 @@ body,
 
 .btn__reset {
     @apply text-slate-700 text-preset-4 capitalize cursor-pointer hover:text-slate-900 hover:underline hover:underline-offset-4 focus-within:text-slate-900 focus-within:underline focus-within:underline-offset-4
-
 }
 
 .form__label {
@@ -88,21 +87,26 @@ body,
 }
 
 .input__items {
-    @apply min-h-12   text-preset-3 font-bold flex items-center justify-center;
+    @apply min-h-12 text-preset-3 font-bold flex items-center justify-center;
 }
 
 .inputs__preset {
     @apply appearance-none text-preset-3 text-slate-900 font-bold px-3 w-full;
 }
+
 .inputs__preset::-webkit-outer-spin-button,
 .inputs__preset::-webkit-inner-spin-button {
-  appearance: none;
-  margin: 0;
+    appearance: none;
+    margin: 0;
 }
 
 .inputs__radio {
     @apply flex items-center justify-start gap-4 px-4 py-3 outline outline-slate-500 rounded-xl;
 }
+
+/* .inputs__radio:focus-within { */
+/*     @apply outline-lime; */
+/* } */
 
 .inputs__radio:has([type="radio"]) {
     position: relative;
@@ -115,16 +119,23 @@ body,
 }
 
 .inputs__radio:has([type="radio"]:checked) {
-    background-color: var(--color-lime-bg);
-    outline: 2px solid var(--color-lime);
+    @apply bg-lime/30 outline-lime;
 }
 
 .type__radio {
-    accent-color: var(--color-lime);
-    inline-size: 1.5rem;
-    block-size: 1.5rem;
+    @apply w-6 h-6;
+    accent-color: #b5a035;
 }
 
+/* .inputs__radio:has([type="radio"]) label::after { */
+/*     content: ''; */
+/*     position: absolute; */
+/*     inset: 0; */
+/* } */
+/* .inputs__radio:has([type="radio"]:checked) { */
+/*     background-color: hsla(61, 70%, 52%, 0.3) !important; */
+/*     outline: 2px solid hsl(61, 70%, 52%) !important; */
+/* } */
 /* @media (prefers-color-scheme: light) { */
 /*     :root { */
 /*         color: #213547; */

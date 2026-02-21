@@ -7,6 +7,6 @@ export const MortageValidForm = (state) => {
 
     if (!state.rate || isNaN(state.rate) || +state.rate <= 0) errors.rate = true;
 
-    if (!state.mortageType) errors.mortageType = true;
+    if (!state.mortgageType) errors.mortgageType = true;
     return errors;
 }

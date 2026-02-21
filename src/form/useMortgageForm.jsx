@@ -1,0 +1,47 @@
+import { useCallback } from 'react';
+import { useMortageAmount } from '../mortageContext.jsx'
+import { MortageValidForm } from './MortageFormValid.jsx';
+import { MortageFormCalculate } from '../MortageCalculate.jsx';
+
+export const useMortgageForm = () => {
+    const { state, dispatch } = useMortageAmount();
+
+    const handleSubmit = useCallback((e) => {
+        e.preventDefault();
+        const errorsForm = MortageValidForm(state);
+        const hasErrors = Object.values(errorsForm).some(value => value === true);
+
+        if (hasErrors) return dispatch({ type: "ERRORS", error: errorsForm })
+
+        const result = MortageFormCalculate(state.amount, state.term, state.rate, state.mortgageType);
+        dispatch({ type: "RESULT", result });
+    }, [state, dispatch]);
+
+    const handleChange = useCallback((e) => {
+        const { name, value } = e.target;
+        dispatch({
+            type: 'UPDATE',
+            field: name,
+            value: value
+        });
+    }, [dispatch]);
+
+    const handleMortgageType = useCallback((e) => {
+        dispatch({
+            type: "MORTGAGE_TYPE",
+            payload: e.target.value,
+        });
+    }, [dispatch]);
+
+    const handleReset = useCallback(() => {
+        dispatch({ type: "CLEAR_ALL" });
+    }, [dispatch]);
+
+    return {
+        state,
+        handleSubmit,
+        handleChange,
+        handleMortgageType,
+        handleReset,
+    };
+}

@@ -3,8 +3,8 @@ export const initialState = {
     amount: "",
     term: "",
     rate: "",
-    mortageType: "",
-    errorMortage: {},
+    mortgageType: "",
+    errorMortgage: {},
     result: null,
 }
 
@@ -14,21 +14,21 @@ export const mortageReducer = (state, action) => {
             return {
                 ...state,
                 [action.field]: action.value,
-                errorMortage: { ...state.errorMortage, [action.field]: false },
+                errorMortgage: { ...state.errorMortgage, [action.field]: false },
                 result: null,
             };
         case "ERRORS":
             return {
-                 ...state, errorMortage: action.error
+                 ...state, errorMortgage: action.error
             };
         case "RESULT":
             return {
-                ...state, result: action.result, errorMortage: {}
+                ...state, result: action.result, errorMortgage: {}
             };
         case "MORTAGE_TYPE":
             return {
                 ...state,
-                mortageType: action.payload,
+                mortgageType: action.payload,
             };
         case "CLEAR_ALL":
             return initialState;
