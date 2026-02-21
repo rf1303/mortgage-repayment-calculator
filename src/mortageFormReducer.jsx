@@ -26,7 +26,6 @@ export const mortageReducer = (state, action) => {
                 ...state, result: action.result, errorMortage: {}
             };
         case "MORTAGE_TYPE":
-            console.log('action.payload:', action.payload)
             return {
                 ...state,
                 mortageType: action.payload,
