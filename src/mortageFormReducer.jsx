@@ -25,7 +25,7 @@ export const mortageReducer = (state, action) => {
             return {
                 ...state, result: action.result, errorMortgage: {}
             };
-        case "MORTAGE_TYPE":
+        case "MORTGAGE_TYPE":
             return {
                 ...state,
                 mortgageType: action.payload,
