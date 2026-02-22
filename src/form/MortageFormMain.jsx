@@ -11,7 +11,7 @@ export const MortageForm = () => {
         <>
             <header className='flex flex-col items-start justify-start gap-2 md:flex-row md:justify-between'>
                 <h1 className='text-slate-900 text-preset-2 font-bold capitalize'>mortgage calculator</h1>
-                <button type='reset' className='btn__reset' onClick={handleReset}>clear all</button>
+                <button type='button' aria-label='Clear all form fields' className='btn__reset' onClick={handleReset}>clear all</button>
             </header>
             <form noValidate onSubmit={handleSubmit} className='grid gap-6'>
                 <FormInput
@@ -67,7 +67,7 @@ export const MortageForm = () => {
                         <label htmlFor="repayment" className='text-slate-900 text-preset-3 font-bold leading-none'>repayment</label>
                     </div>
                     <div className='inputs__radio'>
-                        <input tabIndex="0" type="radio" name="mortgageType" value="only" checked={state.mortgageType === "only"} id="only" onChange={handleMortgageType} className='type__radio' />
+                        <input type="radio" name="mortgageType" value="only" checked={state.mortgageType === "only"} id="only" onChange={handleMortgageType} className='type__radio' />
                         <label htmlFor="only" className='text-slate-900 text-preset-3 font-bold leading-none'>interest only</label>
                     </div>
                     {state.errorMortgage?.mortgageType && <ErrorField hasError={true} id="error-mortgageType" />}
