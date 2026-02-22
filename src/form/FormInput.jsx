@@ -9,7 +9,10 @@ export const FormInput = ({
     error, 
     prefix, 
     suffix,
-    inputRef 
+    inputRef,
+    min,
+    max,
+    step
 }) => {
     return (
         <div className='flex flex-col gap-3 w-full'>
@@ -31,6 +34,9 @@ export const FormInput = ({
                     aria-invalid={error ? 'true' : 'false'}
                     aria-describedby={error ? `error-${name}` : undefined}
                     ref={inputRef}
+                    min={min}
+                    max={max}
+                    step={step}
                 />
                 {suffix && (
                     <span className={`input__items ${suffix.className}`}>

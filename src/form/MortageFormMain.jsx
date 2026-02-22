@@ -14,18 +14,32 @@ export const MortageForm = () => {
                 <button type='reset' className='btn__reset' onClick={handleReset}>clear all</button>
             </header>
             <form noValidate onSubmit={handleSubmit} className='grid gap-6'>
-                <div className='grid gap-3 focus-within:cursor-pointer'>
-                    <label htmlFor="amount" className='form__label'>mortgage amount</label>
-                    <div className={`label__inputs ${state.errorMortgage?.amount ? 'outline-red' : 'outline-slate-500'} justify-start`}>
-                        <span className={`input__items w-11 rounded-l-xl ${state.errorMortgage?.amount ? 'bg-red text-white' : 'bg-slate-100 text-slate-700'}`}>&pound;</span>
-                        <input type="number" id='amount' name='amount' className='inputs__preset' required
-                            value={state.amount} onChange={handleChange} 
-                            aria-invalid={state.errorMortgage?.amount ? 'true' : 'false'}
-                            aria-describedby={state.errorMortgage?.amount ? 'error-amount' : undefined } />
-                    </div>
-                    {state.errorMortgage?.amount && <ErrorField hasError={true} id="error-amount" />}
-                </div>
-                <div className={`grid gap-6 md:grid-cols-2 md:gap-6 ${state.errorMortgage?.term || state.errorMortgage?.rate ? 'mb-0' : ''}`}>
+                {/* <div className='grid gap-3 focus-within:cursor-pointer'> */}
+                {/*     <label htmlFor="amount" className='form__label'>mortgage amount</label> */}
+                {/*     <div className={`label__inputs ${state.errorMortgage?.amount ? 'outline-red' : 'outline-slate-500'} justify-start`}> */}
+                {/*         <span className={`input__items w-11 rounded-l-xl ${state.errorMortgage?.amount ? 'bg-red text-white' : 'bg-slate-100 text-slate-700'}`}>&pound;</span> */}
+                {/*         <input type="number" id='amount' name='amount' className='inputs__preset' required */}
+                {/*             value={state.amount} onChange={handleChange}  */}
+                {/*             aria-invalid={state.errorMortgage?.amount ? 'true' : 'false'} */}
+                {/*             aria-describedby={state.errorMortgage?.amount ? 'error-amount' : undefined } /> */}
+                {/*     </div> */}
+                {/*     {state.errorMortgage?.amount && <ErrorField hasError={true} id="error-amount" />} */}
+                {/* </div> */}
+                <FormInput
+                    label="mortgage amount"
+                    id="amount"
+                    name="amount"
+                    value={state.amount}
+                    onChange={handleChange}
+                    error={state.errorMortgage?.amount}
+                    min="1"
+                    max="1000000000"
+                    step="0.01"
+                    prefix={{
+                        content:"\u00A3",
+                        className:`w-11 rounded-l-xl ${state.errorMortgage?.amount ? 'bg-red text-white' : 'bg-slate-100 text-slate-700'}`
+                    }}/>
+                <div className={`grid gap-6 md:grid-cols-2 md:gap-6`}>
                     <FormInput 
                         label="mortgage term"
                         id="term"
@@ -33,6 +47,9 @@ export const MortageForm = () => {
                         value={state.term}
                         onChange={handleChange}
                         error={state.errorMortgage?.term}
+                        min="1"
+                        max="100"
+                        step="1"
                         suffix={{
                             content: "years",
                             className: `w-20 rounded-r-xl ${state.errorMortgage?.term ? 'bg-red text-white' : 'bg-slate-100 text-slate-700'}`
@@ -45,6 +62,9 @@ export const MortageForm = () => {
                         value={state.rate}
                         onChange={handleChange}
                         error={state.errorMortgage?.rate}
+                        min="0"
+                        max="100"
+                        step="0.01"
                         suffix={{
                             content: "%",
                             className: `w-13 rounded-r-xl ${state.errorMortgage?.rate ? 'bg-red text-white' : 'bg-slate-100 text-slate-700'}`
