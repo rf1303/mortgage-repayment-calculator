@@ -7,7 +7,7 @@ export const YourResults = () => {
 
     if (!result) {
         return (
-            <aside aria-label="No results yet"  aria-atomic="true" className="bg-slate-900 py-8 px-6 grid gap-6 md:p-10 md:rounded-b-3xl lg:h-full lg:rounded-r-3xl lg:rounded-bl-[5rem] lg:place-items-center">
+            <aside aria-label="No results yet" aria-live="polite" aria-atomic="true" className="bg-slate-900 py-8 px-6 grid gap-6 md:p-10 md:rounded-b-3xl lg:h-full lg:rounded-r-3xl lg:rounded-bl-[5rem] lg:place-items-center">
                 <div className='grid place-items-center gap-4 lg:max-h-100'>
                     <div className="w-48 h-48">
                         <IllustrationEmpty aria-hidden="true" />
@@ -37,7 +37,7 @@ export const YourResults = () => {
                     <span className="text-slate-200 text-preset-4 font-medium leading-none">Your monthly repayments</span>
                     <p className="text-preset-1 text-lime font-bold leading-none md:text-[3.5rem] ">&pound;{result.monthly.toFixed(2)}</p>
                 </div>
-                <div className="w-full h-px bg-white/50" role="separator"></div>
+                <hr className="w-full h-px bg-white/50"  />
                 <div className="grid gap-2">
                     <span className="text-slate-200 text-preset-4 font-medium">Total you'll repay over the term</span>
                     <p className="text-white text-preset-2 font-bold">&pound;{result.totalAmount.toFixed(2)}</p>
