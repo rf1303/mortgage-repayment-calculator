@@ -13,7 +13,7 @@ export const YourResults = () => {
                         <IllustrationEmpty aria-hidden="true" />
                     </div>
                     <header className="grid place-items-center gap-4 ">
-                        <h3 className="text-white text-preset-2 font-bold">Results shown here</h3>
+                        <h2 className="text-white text-preset-2 font-bold">Results shown here</h2>
                         <p className="text-slate-200 text-preset-4 text-center font-medium"> Complete the form and click “calculate repayments” to see what
                             your monthly repayments would be.
                         </p>
