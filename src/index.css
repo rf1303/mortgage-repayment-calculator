@@ -130,26 +130,3 @@ body,
     block-size: 1.5rem;
 }
 
-/* .inputs__radio:has([type="radio"]) label::after { */
-/*     content: ''; */
-/*     position: absolute; */
-/*     inset: 0; */
-/* } */
-/* .inputs__radio:has([type="radio"]:checked) { */
-/*     background-color: hsla(61, 70%, 52%, 0.3) !important; */
-/*     outline: 2px solid hsl(61, 70%, 52%) !important; */
-/* } */
-/* @media (prefers-color-scheme: light) { */
-/*     :root { */
-/*         color: #213547; */
-/*         background-color: #ffffff; */
-/*     } */
-/**/
-/*     a:hover { */
-/*         color: #747bff; */
-/*     } */
-/**/
-/*     button { */
-/*         background-color: #f9f9f9; */
-/*     } */
-/* } */

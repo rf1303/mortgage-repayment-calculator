@@ -64,7 +64,7 @@ export const MortageForm = () => {
                     {state.errorMortgage?.mortgageType && <ErrorField hasError={true} id="error-mortgageType" />}
                 </fieldset>
                 <button type='submit' className='flex items-center justify-center text-preset-4 text-slate-900 font-bold bg-lime py-3 mt-4 rounded-4xl capitalize cursor-pointer md:max-w-78 hover:bg-lime/60 focus-within:bg-lime/60 '>
-                    <IconCalculator /> calculate repayments
+                    <IconCalculator aria-hidden="true" /> calculate repayments
                 </button>
             </form>
         </>

@@ -9,14 +9,12 @@ function App() {
             <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-slate-900 focus:outline-2 focus:outline-lime focus:rounded">
                 Skip to main content
             </a>
-            <div className="wrapper__body"> 
+            <div className="wrapper__body">
                 <main id="main-content" className='bg-white w-full text capitalize font-plusJakarta py-8 px-6 grid gap-6 md:rounded-t-3xl lg:h-full lg:rounded-l-3xl lg:rounded-tr-none'>
                     <MortageForm />
                 </main>
-                <aside className="bg-slate-900 py-8 px-6 grid gap-6 md:p-10 md:rounded-b-3xl lg:h-full lg:rounded-r-3xl lg:rounded-bl-[5rem] lg:place-items-center">
-                    <YourResults />
-                </aside>
-            </div> 
+                <YourResults />
+            </div>
         </MortageProvider>
     )
 }

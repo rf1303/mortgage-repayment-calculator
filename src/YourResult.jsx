@@ -9,7 +9,7 @@ export const YourResults = () => {
         return (
             <div className='grid place-items-center gap-4 lg:max-h-100'>
                 <div className="w-48 h-48">
-                    <IllustrationEmpty />
+                    <IllustrationEmpty aria-hidden="true" />
                 </div>
                 <header className="grid place-items-center gap-4 ">
                     <h3 className="text-white text-preset-2 font-bold">Results shown here</h3>
@@ -22,7 +22,7 @@ export const YourResults = () => {
     }
 
     return (
-        <>
+        <aside className="bg-slate-900 py-8 px-6 grid gap-6 md:p-10 md:rounded-b-3xl lg:h-full lg:rounded-r-3xl lg:rounded-bl-[5rem] lg:place-items-center">
             <header className="grid gap-4 ">
                 <h3 className="text-white text-preset-2 font-bold">Your result</h3>
                 <p className="text-slate-200 text-preset-4 font-medium">
@@ -41,7 +41,7 @@ export const YourResults = () => {
                     <p className="text-white text-preset-2 font-bold">&pound;{result.totalAmount.toFixed(2)}</p>
                 </div>
             </section>
-        </>
+        </aside>
     );
 }
 
