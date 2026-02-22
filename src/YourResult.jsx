@@ -26,7 +26,7 @@ export const YourResults = () => {
     return (
         <aside className="bg-slate-900 py-8 px-6 flex flex-col gap-6 md:p-10 md:rounded-b-3xl lg:max-w-126 lg:h-full lg:rounded-r-3xl lg:rounded-bl-[5rem] lg:gap-10 lg:p-10 lg:items-start" aria-live="polite" aria-atomic="true">
             <header className="grid gap-4 ">
-                <h3 className="text-white text-preset-2 font-bold">Your result</h3>
+                <h2 className="text-white text-preset-2 font-bold">Your result</h2>
                 <p className="text-slate-200 text-preset-4 font-medium">
                     Your results are shown below based on the information you provided.
                     To adjust the results, edit the form and click "calculate repayments" again.
