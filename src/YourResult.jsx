@@ -7,7 +7,7 @@ export const YourResults = () => {
 
     if (!result) {
         return (
-            <article role="status" aria-label="No results yet" className="bg-slate-900 py-8 px-6 grid gap-6 md:p-10 md:rounded-b-3xl lg:h-full lg:rounded-r-3xl lg:rounded-bl-[5rem] lg:place-items-center">
+            <aside role="status" aria-label="No results yet" aria-live="polite" aria-atomic="true" className="bg-slate-900 py-8 px-6 grid gap-6 md:p-10 md:rounded-b-3xl lg:h-full lg:rounded-r-3xl lg:rounded-bl-[5rem] lg:place-items-center">
                 <div className='grid place-items-center gap-4 lg:max-h-100'>
                     <div className="w-48 h-48">
                         <IllustrationEmpty aria-hidden="true" />
@@ -19,7 +19,7 @@ export const YourResults = () => {
                         </p>
                     </header>
                 </div>
-            </article>
+            </aside>
         );
     }
 
