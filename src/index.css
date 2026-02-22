@@ -91,7 +91,7 @@ body,
 }
 
 .inputs__preset {
-    @apply appearance-none text-preset-3 text-slate-900 font-bold px-3 w-full;
+    @apply appearance-none text-preset-3 text-slate-900 font-bold px-3 w-full hover:cursor-pointer;
 }
 
 .inputs__preset::-webkit-outer-spin-button,
@@ -107,6 +107,7 @@ body,
         content: '';
         position: absolute;
         inset: 0;
+        cursor: pointer;
     }
 }
 
@@ -114,10 +115,9 @@ body,
     @apply flex items-center justify-start gap-4 px-4 py-3 outline outline-slate-500 rounded-xl;
 }
 
-/* .inputs__radio:focus-within { */
-/*     @apply outline-lime; */
-/* } */
-
+.inputs__radio:focus-within {
+    @apply outline-lime;
+}
 
 .inputs__radio:has([type="radio"]:checked) {
     background-color: var(--color-lime-bg); 
@@ -126,8 +126,8 @@ body,
 
 .type__radio {
     accent-color: var(--color-lime);
-    inline-size: 1.125rem;
-    block-size: 1.125rem;
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
 }
 
 /* .inputs__radio:has([type="radio"]) label::after { */
