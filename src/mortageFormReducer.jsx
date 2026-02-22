@@ -29,6 +29,7 @@ export const mortageReducer = (state, action) => {
             return {
                 ...state,
                 mortgageType: action.payload,
+                return: null,
             };
         case "CLEAR_ALL":
             return initialState;
