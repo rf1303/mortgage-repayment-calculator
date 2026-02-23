@@ -37,7 +37,7 @@ export const YourResults = () => {
                     <span className="text-slate-200 text-preset-4 font-medium leading-none">Your monthly repayments</span>
                     <p className="text-preset-1 text-lime font-bold leading-none md:text-[3.5rem] ">&pound;{result.monthly.toFixed(2)}</p>
                 </div>
-                <hr className="w-full h-px bg-white/50"  />
+                <hr className="w-full h-px bg-white/80"  />
                 <div className="grid gap-2">
                     <span className="text-slate-200 text-preset-4 font-medium">Total you'll repay over the term</span>
                     <p className="text-white text-preset-2 font-bold">&pound;{result.totalAmount.toFixed(2)}</p>
