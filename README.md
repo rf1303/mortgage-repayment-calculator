@@ -1,16 +1,78 @@
-# React + Vite
+# Frontend Mentor - Mortgage repayment calculator solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a solution to the [Mortgage repayment calculator challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK73). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-Currently, two official plugins are available:
+## Table of contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-## React Compiler
+## Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### The challenge
 
-## Expanding the ESLint configuration
+Users should be able to:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Input mortgage information and see monthly repayment and total repayment amounts after submitting the form
+- See form validation messages if any field is incomplete
+- Complete the form only using their keyboard
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
+
+### Screenshot
+
+![](./screenshot.jpg)
+
+### Links
+
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- [React](https://reactjs.org/) 19 - JS library
+- [Vite](https://vite.dev/) - Build tool
+- [Tailwind CSS](https://tailwindcss.com/) 4 - CSS framework
+- React Context + useReducer for state management
+
+### What I learned
+
+This project helped me practice several key concepts:
+
+- **React Context with useReducer**: Managing complex form state using React Context and useReducer pattern for predictable state updates
+- **Form Validation**: Implementing client-side validation with custom validation logic
+- **Tailwind CSS v4**: Using the latest version of Tailwind CSS with the Vite plugin
+- **Accessibility**: Ensuring form elements are accessible with proper ARIA attributes and keyboard navigation
+
+```jsx
+const initialState = {
+  amount: '',
+  term: '',
+  rate: '',
+  mortageType: '',
+  errorMortage: {},
+  result: null
+}
+```
+
+### Continued development
+
+Areas I want to focus on:
+
+- Adding unit tests with Vitest
+- Implementing an error boundary
+- Enhancing error handling with more descriptive messages
+
+## Author
+
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)

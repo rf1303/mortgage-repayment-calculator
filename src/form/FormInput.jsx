@@ -15,7 +15,7 @@ export const FormInput = ({
     step
 }) => {
     return (
-        <div className='flex flex-col gap-3 w-full'>
+        <div className='flex flex-col gap-3 w-full '>
             <label htmlFor={id} className='form__label'>{label}</label>
             <div className={`label__inputs ${error ? 'outline-red' : 'outline-slate-500'} justify-between`}>
                 {prefix && (

@@ -70,7 +70,7 @@ body,
 }
 
 .label__inputs {
-    @apply max-h-12 flex items-center outline-2 rounded-xl hover:cursor-pointer;
+    @apply max-h-12 flex items-center outline rounded-xl hover:cursor-pointer;
 }
 
 .label__inputs:focus-within {
@@ -111,12 +111,12 @@ body,
 }
 
 .inputs__radio:focus-within {
-    @apply outline-lime;
+    @apply outline-2 outline-lime;
 }
 
 .inputs__radio:has([type="radio"]:checked) {
     background-color: var(--color-lime-bg); 
-    outline-color: var(--color-lime);
+    outline: 2px solid var(--color-lime);
 }
 
 .type__radio {
