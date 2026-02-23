@@ -1,8 +1,8 @@
 import { IllustrationEmpty } from './assets/IconsSvg.jsx';
-import { useMortageAmount } from './mortageContext.jsx'
+import { useMortgageAmount } from './mortgageContext.jsx'
 
 export const YourResults = () => {
-    const { state } = useMortageAmount();
+    const { state } = useMortgageAmount();
     const { result } = state;
 
     if (!result) {
