@@ -8,7 +8,7 @@ export const initialState = {
     result: null,
 }
 
-export const mortageReducer = (state, action) => {
+export const mortgageReducer = (state, action) => {
     switch (action.type) {
         case "UPDATE":
             return {

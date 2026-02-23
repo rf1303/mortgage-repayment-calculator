@@ -1,10 +1,10 @@
 import { createContext, useContext, useReducer } from 'react';
-import { mortageReducer, initialState } from './mortageFormReducer.jsx';
+import { mortgageReducer, initialState } from './mortgageFormReducer.jsx';
 
 const MortgageContext = createContext();
 
 export const MortgageProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(mortageReducer, initialState);
+    const [state, dispatch] = useReducer(mortgageReducer, initialState);
     return (
         <MortgageContext.Provider value={{ state, dispatch }}>
             {children}

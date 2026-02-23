@@ -28,12 +28,18 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot01.jpeg)
+![](./screenshot02.jpeg)
+![](./screenshot03.jpeg)
+![](./screenshot04.jpeg)
+![](./screenshot05.jpeg)
+![](./screenshot06.jpeg)
+![](./screenshot07.jpeg)
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://mortgage-repayment-calculator-roan.vercel.app/)
 
 ## My process
 
@@ -59,8 +65,8 @@ const initialState = {
   amount: '',
   term: '',
   rate: '',
-  mortageType: '',
-  errorMortage: {},
+  mortgageType: '',
+  errorMortgage: {},
   result: null
 }
 ```
@@ -75,4 +81,6 @@ Areas I want to focus on:
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@rf1303](https://www.frontendmentor.io/profile/rf1303)
+- GitHub - [@rf1303](https://github.com/rf1303)
+- Linkedin - [@Ramiro Fernandez](https://www.linkedin.com/in/ramiro-fernandez-260935125/)
